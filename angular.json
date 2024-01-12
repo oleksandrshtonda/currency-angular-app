@@ -17,7 +17,8 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/currency-angular-app",
+            "outputPath": "docs",
+            "baseHref": "https://oleksandrshtonda.github.io/currency-angular-app/",
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": [
@@ -48,7 +49,8 @@
                   "maximumError": "4kb"
                 }
               ],
-              "outputHashing": "all"
+              "outputHashing": "all",
+              "deleteOutputPath": true
             },
             "development": {
               "optimization": false,
@@ -94,6 +96,9 @@
             ],
             "scripts": []
           }
+        },
+        "deploy": {
+          "builder": "angular-cli-ghpages:deploy"
         }
       }
     }
